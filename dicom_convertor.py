@@ -10,7 +10,7 @@ from pydicom.data import get_testdata_file
 
 def convert_to_diom(file_name):
 	"""
-	Convert bmp to diom
+	Convert bmp to dicom
 	"""
 	path = get_testdata_file("CT_small.dcm")
 	ds = pydicom.dcmread(path)
