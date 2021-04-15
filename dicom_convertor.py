@@ -18,7 +18,7 @@ def convert_to_dicom(file_name):
 	npa = np.asarray(img)
 	ds.PixelData = img.tobytes()
 	ds.save_as(file_name+".dcm")
-	print(file_name+".dcm"+"... DONE")
+	print("DONE\t "+file_name+".dcm")
 	
 def img2dcm_from_bmp(file_name):
 	"""
@@ -26,7 +26,7 @@ def img2dcm_from_bmp(file_name):
 	To install: brew install dcmtk
 	"""
 	os.system('img2dcm -i BMP '+file_name+'.bmp '+file_name+'.dcm ')	
-	print(file_name+".dcm"+"... DONE")
+	print("DONE\t "+file_name+".dcm")
 
 def get_file_names(DIR):
 	"""
@@ -36,9 +36,7 @@ def get_file_names(DIR):
 
 if __name__ == '__main__':
 	if len(sys.argv) != 3 or sys.argv[1] in ["--help", "-h"]:
-		print(f"$ python {sys.argv[0]} type directory_path")
-		print("type: 0 => pydicom")
-		print("      1 => dcmtl")
+		print(f"TRY\t $ python {sys.argv[0]} [0 => pydicom, 1 => dcmtl] [directory_path]")
 		sys.exit()
 
 	DIR = sys.argv[2]
@@ -47,8 +45,10 @@ if __name__ == '__main__':
 
 	file_names = get_file_names(DIR)
 	if int(sys.argv[1]) == 0:
+		print("RUN\t pydicom...")
 		for name in file_names:
 			convert_to_dicom(name[:-4])
 	else:
+		print("RUN\t dcmtl...")
 		for name in file_names:
 			img2dcm_from_bmp(name[:-4])
