@@ -6,7 +6,6 @@ import numpy as np
 import pydicom
 import glob
 from PIL import Image
-from pydicom.dataset import Dataset, FileDataset
 from pydicom.data import get_testdata_file
 
 def convert_to_dicom(file_name):
