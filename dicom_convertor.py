@@ -44,6 +44,7 @@ if __name__ == '__main__':
 		DIR = DIR+"/"
 
 	file_names = get_file_names(DIR)
+	
 	if int(sys.argv[1]) == 0:
 		print("RUN\t pydicom...")
 		for name in file_names:
