@@ -2,9 +2,10 @@
 
 import sys
 import os 
-import numpy as np
-import pydicom
 import glob
+import pydicom
+import numpy as np
+
 from PIL import Image
 from pydicom.data import get_testdata_file
 
@@ -16,7 +17,7 @@ def update_destination_file_name (file_name):
 	"""
 	global COUNTER 
 	COUNTER += 1
-	splited = file_name.split('/')
+	splitted = file_name.split('/')
 	return file_name[:len(file_name)-len(splited[-1])] + 'Image%05d' % COUNTER +'_'+splited[-1]
 
 
