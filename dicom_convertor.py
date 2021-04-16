@@ -18,7 +18,7 @@ def update_destination_file_name (file_name):
 	global COUNTER 
 	COUNTER += 1
 	splitted = file_name.split('/')
-	return file_name[:len(file_name)-len(splited[-1])] + 'Image%05d' % COUNTER +'_'+splited[-1]
+	return file_name[:len(file_name)-len(splitted[-1])] + 'Image%05d' % COUNTER +'_'+splitted[-1]
 
 
 def convert_to_dicom(file_name):
